@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Clean, trustworthy color palette */
+    --background: 0 0% 99%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    /* Trustworthy teal-green */
+    --primary: 168 70% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm backgrounds */
+    --secondary: 45 30% 96%;
+    --secondary-foreground: 220 20% 10%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    /* Amber accent for CTAs */
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 168 70% 38%;
+
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 10%;
+    --verified: 168 70% 38%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 168 70% 38%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 168 70% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 220 20% 10%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 168 70% 45%;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 168 70% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 168 70% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(168 70% 30%) 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(25 92% 50%) 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--background)) 100%);
+  }
+
+  .shadow-soft {
+    box-shadow: 0 4px 20px -4px hsl(var(--foreground) / 0.08);
+  }
+
+  .shadow-glow {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.15);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
